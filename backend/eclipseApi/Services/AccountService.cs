@@ -1,6 +1,3 @@
-// Services/AccountService.cs
-using System;
-using System.Threading.Tasks;
 using EclipseCapital.API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,11 +14,17 @@ namespace EclipseCapital.API.Services
 
         public async Task<Account?> GetAccountAsync(string userId)
         {
-            return await _context.Accounts.FirstOrDefaultAsync(a => a.UserId == userId);
+            return await _context.Accounts
+                .FirstOrDefaultAsync(a => a.UserId == userId);
         }
 
         public async Task<Account> CreateAccountAsync(string userId)
         {
+            if (await _context.Accounts.AnyAsync(a => a.UserId == userId))
+            {
+                throw new InvalidOperationException("An account for this user already exists.");
+            }
+
             var account = new Account
             {
                 UserId = userId,
@@ -41,7 +44,7 @@ namespace EclipseCapital.API.Services
             var account = await GetAccountAsync(userId);
             if (account == null)
             {
-                throw new Exception("Account not found");
+                throw new KeyNotFoundException("Account not found");
             }
 
             account.Balance += amount;

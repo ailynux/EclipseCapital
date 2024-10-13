@@ -1,4 +1,3 @@
-// Models/ApplicationDbContext.cs
 using Microsoft.EntityFrameworkCore;
 
 namespace EclipseCapital.API.Models
@@ -12,5 +11,16 @@ namespace EclipseCapital.API.Models
 
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<User> Users { get; set; }  // Add this line
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Add any additional configurations here
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Username)
+                .IsUnique();
+        }
     }
 }

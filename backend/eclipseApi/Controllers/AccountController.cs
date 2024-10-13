@@ -1,11 +1,14 @@
-// Controllers/AccountController.cs
+using System;
 using System.Threading.Tasks;
-using EclipseCapital.API.Models;
-using EclipseCapital.API.Services;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using EclipseCapital.API.Services;
+using EclipseCapital.API.Models;
 
 namespace EclipseCapital.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class AccountController : ControllerBase
@@ -20,20 +23,40 @@ namespace EclipseCapital.API.Controllers
         [HttpGet("{userId}")]
         public async Task<ActionResult<Account>> GetAccount(string userId)
         {
-            var account = await _accountService.GetAccountAsync(userId);
-            if (account == null)
+            try
             {
-                return NotFound();
-            }
+                var account = await _accountService.GetAccountAsync(userId);
+                if (account == null)
+                {
+                    return NotFound("Account not found");
+                }
 
-            return account;
+                return Ok(account);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpPost]
-        public async Task<ActionResult<Account>> CreateAccount(string userId)
+        public async Task<ActionResult<Account>> CreateAccount()
         {
-            var account = await _accountService.CreateAccountAsync(userId);
-            return CreatedAtAction(nameof(GetAccount), new { userId = account.UserId }, account);
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return BadRequest("User ID not found");
+                }
+
+                var account = await _accountService.CreateAccountAsync(userId);
+                return CreatedAtAction(nameof(GetAccount), new { userId = account.UserId }, account);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }

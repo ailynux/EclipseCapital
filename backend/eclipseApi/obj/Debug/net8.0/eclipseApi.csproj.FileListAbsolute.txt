@@ -1,5 +1,6 @@
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/appsettings.Development.json
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/appsettings.json
+/Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/launchsettings.json
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/eclipseApi
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/eclipseApi.deps.json
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/eclipseApi.runtimeconfig.json
@@ -7,7 +8,9 @@
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/eclipseApi.pdb
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Azure.Core.dll
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Azure.Identity.dll
+/Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/BCrypt.Net-Next.dll
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Humanizer.dll
+/Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Microsoft.AspNetCore.Razor.Language.dll
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/Microsoft.Build.dll
@@ -258,4 +261,3 @@
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/obj/Debug/net8.0/eclipseApi.pdb
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/obj/Debug/net8.0/eclipseApi.genruntimeconfig.cache
 /Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/obj/Debug/net8.0/ref/eclipseApi.dll
-/Users/ailyndiaz/Desktop/Eclipse_app/EclipseCapital/backend/eclipseApi/bin/Debug/net8.0/launchsettings.json

@@ -1,5 +1,3 @@
-// Models/Account.cs
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,7 +7,12 @@ namespace EclipseCapital.API.Models
     {
         [Key]
         public int Id { get; set; }
+        
+        [Required]
         public required string UserId { get; set; }
+        
+        [ForeignKey("UserId")]
+        public User? User { get; set; }
         
         [Column(TypeName = "decimal(18,2)")]
         public decimal Balance { get; set; }

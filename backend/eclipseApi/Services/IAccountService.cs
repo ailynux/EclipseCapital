@@ -1,5 +1,3 @@
-// Services/IAccountService.cs
-using System.Threading.Tasks;
 using EclipseCapital.API.Models;
 
 namespace EclipseCapital.API.Services
